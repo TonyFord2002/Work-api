@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000
 const app = express()
 
 //Connect to MongoDB
-mongoose.connect(mongoURI, {useNewUlParser: true},
+mongoose.connect(mongoURI, {useNewUrlParser: true},
     ()=> console.log('Connected to MongoDB', mongoURI))
 
 //Error or Disconnected

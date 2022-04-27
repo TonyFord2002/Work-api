@@ -1,21 +1,15 @@
 const mongoose = require('mongoose')
 
-const jobSchema = new mongoose.Schema({
-    job: {type: String, required: true},
+const jobsSchema = new mongoose.Schema({
+    job: {type: String},
     image: { type: String},
     cost: {type: Number}
 })
 
-const workerSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-    rate: {type: Number},
-    hours: {type: Number}
-})
-
 const JobsiteSchema = new mongoose.Schema({
     name: {type: String,},
-    job: [jobSchema],
-    worker: [workerSchema]
+    jobs: [jobsSchema],
+    
 })
 
 const Jobsite = mongoose.model('Jobsite', JobsiteSchema)
