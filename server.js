@@ -7,14 +7,6 @@ const cors = require('cors')
 const PORT = process.env.PORT || 3000
 const app = express()
 
-//Connect to MongoDB
-mongoose.connect(mongoURI, {useNewUrlParser: true},
-    ()=> console.log('Connected to MongoDB', mongoURI))
-
-//Error or Disconnected
-db.on('error', err => console.log(err.message + ' is MongoDB not running?'))
-db.on('disconnected', () => console.log('mongo disconnected'))
-
 //Middleware
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
@@ -24,6 +16,17 @@ app.use(cors())
 //Routes
 const jobsiteController = require ('./controllers/jobsite.js')
 app.use('/workapp', jobsiteController)
+
+const workerController = require('./controllers/worker.js')
+app.use('/workers', workerController)
+
+//Connect to MongoDB
+mongoose.connect(mongoURI, {useNewUrlParser: true},
+    ()=> console.log('Connected to MongoDB', mongoURI))
+
+//Error or Disconnected
+db.on('error', err => console.log(err.message + ' is MongoDB not running?'))
+db.on('disconnected', () => console.log('mongo disconnected'))
 
 //Comfirmation of port working
 app.listen(PORT, ()=>{

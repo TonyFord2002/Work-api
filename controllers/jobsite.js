@@ -10,7 +10,6 @@ router.get('/',(req, res)=>{
     })
 })
 
-
 //Delete
 router.delete('/:id', (req,res)=>{
     Jobsite.findByIdAndRemove(req.params.id, (err, deleteJobsite)=>{   res.json(deleteJobsite)

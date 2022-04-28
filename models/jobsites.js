@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const jobsSchema = new mongoose.Schema({
-    job: {type: String},
+    description: {type: String},
     image: { type: String},
     cost: {type: Number}
 })
