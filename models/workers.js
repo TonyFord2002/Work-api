@@ -4,8 +4,9 @@ const WorkerSchema = new mongoose.Schema({
     name: {type: String, required: true},
     rate: {type: Number},
     hours: {type: Number},
-    jobs: {type: String}
+    jobId: {type: String},
+    jobsiteId: {type: String}
 })
 
-const Worker = mongoose.model('worker', WorkerSchema)
+const Worker = mongoose.model('Worker', WorkerSchema)
 module.exports = Worker

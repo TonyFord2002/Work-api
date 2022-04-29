@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const Jobsite = require('../models/jobsites')
-const Worker = require('../models/workers')
 
 //Index
 router.get('/',(req, res)=>{

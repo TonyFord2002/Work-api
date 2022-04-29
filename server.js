@@ -18,7 +18,10 @@ const jobsiteController = require ('./controllers/jobsite.js')
 app.use('/workapp', jobsiteController)
 
 const workerController = require('./controllers/worker.js')
-app.use('/workers', workerController)
+app.use('/worker', workerController)
+
+const jobController = require ('./controllers/job.js')
+app.use('/job', jobController)
 
 //Connect to MongoDB
 mongoose.connect(mongoURI, {useNewUrlParser: true},
