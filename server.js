@@ -15,7 +15,7 @@ app.use(cors())
 
 //Routes
 const jobsiteController = require ('./controllers/jobsite.js')
-app.use('/workapp', jobsiteController)
+app.use('/jobsite', jobsiteController)
 
 const workerController = require('./controllers/worker.js')
 app.use('/worker', workerController)
